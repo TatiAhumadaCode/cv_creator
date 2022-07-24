@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  display: grid;
+  grid-template-areas:
+    "main-title main-title"
+    "cv-form cv-preview";
+  grid-template-columns: 550px 550px;
+  grid-template-rows: 50px 560px;
+  justify-content: space-evenly;
+  font-family: 'Roboto Mono', monospace;
+}
+
+.main-title {
+  grid-area: main-title;
+  text-align: center;
+}
+
+/* cv form preview */
+
+.cv-form {
+  grid-area: cv-form;
+  text-align: center;
+  border: 1px solid black;
+}
+
+.cv-form > form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.cv-form > form > .contact-form,
+.jobs-form,
+.about-form {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: 10px;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="url"] {
+  width: 206px;
+  height: 26px;
+  padding-left: 6px;
+  border: 1px solid #a59e9e;
+  border-radius: 5px;
+}
+
+button {
+  width: 60px;
+  height: 26px;
+  margin: 2px;
+  cursor: pointer;
+}
+
+.jobs-form > label {
+  font-size: 14px;
+}
+
+/* cv preview form */
+
+.cv-preview {
+  grid-area: cv-preview;
+  display: grid;
+  grid-template-areas:
+    "personal-details personal details"
+    "soft-skills resume";
+  grid-template-columns: 195px 1fr;
+  grid-template-rows: 120px 2fr;
+  border: 1px solid black;
+}
+
+.personal-details {
+  grid-area: personal-details;
+  grid-column: 1 / 4;
+  grid-row: 1 / 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.soft-skills {
+  grid-area: soft-skills;
+  grid-column: 1 / 2;
+  grid-row: 2 / 5;
+}
+
+.resume {
+  grid-area: resume;
+  grid-column: 2 / 4;
+  grid-row: 2 / 5;
+}
